@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>View Registered Users</title>
+</head>
+<body>
+<div class="container">
+    <h2>Registered Users</h2> 
+    <a href="index.html" class="btn btn-primary">Back to Registration</a>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Country</th>
+                <th>Contact</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody id="userTable">
+            <!-- User data will be inserted here -->
+        </tbody>
+    </table>
+</div>
+<script>
+    function loadUsers() {
+        const users = JSON.parse(localStorage.getItem('users')) || []; //template literals
+        let rows = users.map(user => 
+            `<tr>   
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.password}</td>
+                <td>${user.country}</td>
+                <td>${user.contact}</td>
+                <td>${user.gender}</td>
+            </tr>`
+        ).join('');
+        document.getElementById('userTable').innerHTML = rows;
+    }
+    window.onload = loadUsers; // Call loadUsers function when page loads
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }   
+        #heading
+        {
+            display: flex;
+           color: brown;
+        }
+        
+        /* body{
+            background-image: url(https://plus.unsplash.com/premium_photo-1713803863170-436be4feb510?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8);
+            background-size: cover;
+            background-position: center;
+        } */
+    </style>
+</head>
+<body id>
+    <h1 id="heading">TABLE CREATION</h1>
+    <label for="input1">Enter the table no 1 dimension</label>
+    <input type="text" placeholder="3#3#3" id="input1">
+    <label for="input2">Enter the table no 2 dimensions</label>
+    <input type="text" placeholder="3#3#3" id="input2">
+    <button id="btn" onclick="createTable()">generateTable</button>
+    <!-- <button id="btn2"onclick="resetdata()">Reset</button> -->
+    <div id="tableContainer"></div>
+
+    <script>
+        function createTable() {
+            const input1 = document.getElementById('input1');
+            const input2 = document.getElementById('input2');
+            const dimensions1 = input1.value; // initially we get the input as the string so we have to convert it
+            const dimensions2 = input2.value;
+            const [rows1, cols1, value1] = dimensions1.split("#").map(Number); //split function is used to for getting ["3" "3" "3"] this string
+            const [rows2, cols2, value2] = dimensions2.split("#").map(Number); //here the map function is used to convert ["3" "3" "3"] =[ 3 3 3]  basically string to number number is javascript function
+            if (rows1 === rows2 && cols1 === cols2) {
+                const table1 = createTables(rows1, cols1, value1);
+                const table2 = createTables(rows2, cols2, value2);
+                const table3 = createThirdTable(rows1, cols1, value1, value2);
+
+                const container = document.getElementById('tableContainer');
+                container.innerHTML = ""; // this are the used to remove removing the inner content of that container
+                container.appendChild(table1);
+                container.appendChild(table2);
+                container.appendChild(table3);
+            } else {
+                alert("The dimensions of the tables are not the same");
+            }
+
+            // Clear the input fields for new inputs after processing (whether successful or failed)
+            input1.value = "";
+            input2.value = "";
+        }
+
+        function createTables(rows, cols, value) {
+            const table = document.createElement('table');
+            for (let i = 0; i < rows; i++) {
+                const row = table.insertRow();
+                for (let j = 0; j < cols; j++) {
+                    const cell = row.insertCell();
+                    const num = (i + 1) * (value + j);
+                    cell.textContent = num;
+                }
+            }
+            return table;
+        }
+
+        function createThirdTable(rows, cols, value1, value2) {
+            const table = document.createElement('table');
+            for (let i = 0; i < rows; i++) {
+                const row = table.insertRow();
+                for (let j = 0; j < cols; j++) {
+                    const cell = row.insertCell();
+                    const num1 = (i + 1) * (value1 + j);                
+                    const num2 = (i + 1) * (value2 + j);
+                    if (num1 === num2) {
+                        cell.textContent = num1;
+                    } else {
+                        const product = num1 * num2;
+                        cell.textContent = product; //row data
+                    }
+                }
+            }
+            return table;
+            
+        //  function resetdata()
+        //  {
+        //     document.getElementById('input1').value="";
+        //     document.getElementById('input2').value="";
+        //     document.getElementById('tableContainer').innerHTML="";
+        //  }
+
+        /*For i = 1 (2nd row):
+  For j = 0: num = (1 + 1) * (10 + 0) = 2 * 10 = 20
+  For j = 1: num = (1 + 1) * (10 + 1) = 2 * 11 = 22
+  For j = 2: num = (1 + 1) * (10 + 2) = 2 * 12 = 24
+  Resultant second row: [20, 22, 24]*/
+
+        }
+        
+    </script>
+</body>
+</html>

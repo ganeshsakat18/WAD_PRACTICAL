@@ -1,0 +1,93 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e8eff1; /* Light greyish-blue background */
+    color: #2c3e50; /* Dark blue text color */
+}
+
+header {
+    background-color: #18191a; /* Brighter blue for header */
+    padding: 20px 10px;
+    text-align: center;
+}
+
+header .logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: white; /* White text for logo for better contrast */
+}
+
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav a {
+    color: white; /* White text for links */
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px;
+}
+
+nav a:hover, nav a.active {
+    background-color: #eba675; /* Darker shade of blue for hover and active state */
+    color: #ecf0f1; /* Light grey text on hover for better visibility */
+}
+
+footer {
+    background-color: #1b1b1c; /* Soft grey footer background */
+    color: #ecf0f1; /* Light text color for contrast */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height:10%;
+    width: 100%;
+}
+
+.contact-info p, .social-links a {
+    margin: 10px;
+}
+
+.social-links a {
+    color: #2c3e50; /* Dark blue links to match the body text color */
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+    color: #3498db; /* Blue color on hover for links */
+}
+
+main {
+    padding: 20px;
+    padding-bottom: 50px; /* Padding to avoid content hiding behind footer */
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+    }
+}
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom:10%;
+}
+
+.image-gallery img {
+    flex: 1 1 300px; /* Each image can take up space but shrink to 300px if necessary */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: rounds the corners of the images */
+}

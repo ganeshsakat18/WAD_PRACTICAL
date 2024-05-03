@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jquery Mobile Example</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <style>
+    img.responsive-img {
+      width: 100%; /* Responsive width */
+      height: auto; /* Maintain aspect ratio */
+    }
+  
+    .content-flex {
+      display: flex;
+      flex-direction: column; /* Stack vertically on smaller screens */
+    }
+  
+    @media (min-width: 600px) {
+      .content-flex {
+        flex-direction: row; /* Side by side on larger screens */
+      }
+    }
+  
+    .center {
+      text-align: center;
+    }
+  
+    .footer-link {
+      padding: 5px;
+      display: inline-block; /* Better spacing for footer links */
+    }
+  
+    .footer-link a {
+      text-decoration: none;
+      color: blue;
+    }
+  
+    .header-text h1 {
+      font-size: 24px; /* Smaller screens */
+      text-align: center;
+      margin: 10px 0;
+    }
+  
+    .header-text h2 {
+      font-size: 16px; /* Smaller screens */
+      text-align: center;
+      margin: 5px 0;
+      color: #555;
+    }
+  
+    @media (min-width: 600px) {
+      .header-text h1 {
+        font-size: 32px; /* Medium screens */
+      }
+      .header-text h2 {
+        font-size: 20px; /* Medium screens */
+      }
+    }
+  
+    @media (min-width: 1000px) {
+      .header-text h1 {
+        font-size: 40px; /* Larger screens */
+      }
+      .header-text h2 {
+        font-size: 24px; /* Larger screens */
+      }
+    }
+
+    .hover-effect {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .hover-effect:hover {
+      transform: scale(1.1);
+    }
+  </style>
+  
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script>
+  $(document).ready(function() {
+  
+
+    $(".new-hover-effect").hover(function() {
+        $(this).css("box-shadow", "0px 0px 8px blue");
+    }, function() {
+        $(this).css("box-shadow", "none");
+    });
+   
+
+    $("#search-input").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".topper-info").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+});
+  </script>
+</head>
+<body>
+  <div data-role="page" id="home">
+    <div data-role="header">
+      <h1>PUNE INSTITUTE OF COMPUTER TECHNOLOGY</h1>
+      <h2>(An Autonomous Institute affiliated to Savitribai Phule Pune University)</h2>
+    </div>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home" class="ui-btn-active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#toppers">Our Toppers</a></li>
+        <li><a href="#registration">Registration</a></li>
+      </ul>
+    </div>
+    <div data-role="content" class="content-flex">
+      <div>
+        <img src="6.jpg" alt="Campus View of PICT" class="responsive-img hover-effect new-hover-effect">
+      </div>
+      <div style="margin-left: 100px;">
+        <h2>Welcome to PICT</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore temporibus sed similique laboriosam a magnam...</p>
+        <h3>Vision:</h3>
+        <p>Pune Institute of Computer Technology aspires to be the leader in higher technical education and research of international repute.</p>
+        <h3>Mission:</h3>
+        <p>To be leading and most sought after Institute of education and research in emerging engineering and technology disciplines...</p>
+      </div>
+    </div>
+    <div data-role="footer" class="center">
+      <h3>Quick Access</h3>
+      <div class="footer-link"><a href="#home">Home</a></div>
+      <div class="footer-link"><a href="#about">About</a></div>
+      <div class="footer-link"><a href="#toppers">Topper</a></div>
+      <div class="footer-link"><a href="#registration">Registration</a></div>
+      <h5>All the Rights are reserved with pict.org © 2024-25</h5>
+    </div>
+  </div>
+ 
+
+
+
+  <!-- About Page -->
+  <div data-role="page" id="about">
+    <div data-role="header">
+      <h1>About Pune Institute of Computer Technology</h1>
+    </div>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about" class="ui-btn-active">About</a></li>
+        <li><a href="#toppers">Our Toppers</a></li>
+        <li><a href="#registration">Registration</a></li>
+      </ul>
+    </div>
+    <div data-role="content" class="center">
+      <div class="dummy-text">
+        <h2>Welcome to PICT</h2>
+        <p>Pune Institute of Computer Technology (PICT) is a premier institute for computer education in India. Established in 1983, PICT has consistently been ranked among the top computer engineering institutes in the country.</p>
+        <p>Our state-of-the-art campus provides an ideal environment for learning and research. With world-class faculty and cutting-edge facilities, we strive to nurture the next generation of computer professionals.</p>
+        <h2>Our Achievements</h2>
+        <p>Over the years, PICT has achieved numerous milestones:</p>
+        <ul>
+          <li>Ranked #1 in Computer Engineering by National Institutional Ranking Framework (NIRF)</li>
+          <li>Recipient of the Best Engineering College Award by the Government of Maharashtra</li>
+          <li>Produced several industry leaders and entrepreneurs</li>
+          <li>Active involvement in research and development projects</li>
+        </ul>
+      </div>
+      <div class="image-gallery">
+        <img src="7.jpg" alt="Campus" class="responsive-img hover-effect new-hover-effect">
+        <img src="8.jpg" alt="Lab" class="responsive-img hover-effect new-hover-effect">
+        <img src="9.jpg" alt="Library" class="responsive-img hover-effect new-hover-effect">
+      </div>
+    </div>
+    <div data-role="footer" class="center">
+      <h2>Quick Access</h2>
+      <div class="footer-link"><a href="#home">Home</a></div>
+      <div class="footer-link"><a href="#about">About</a></div>
+      <div class="footer-link"><a href="#toppers">Topper</a></div>
+      <div class="footer-link"><a href="#registration">Registration</a></div>
+      <p>All Rights Reserved with PICT &copy; 2024-25</p>
+    </div>
+  </div>
+
+  <!-- Toppers Page -->
+  <div data-role="page" id="toppers">
+    <div data-role="header">
+      <h1>Our Toppers</h1>
+      <h3>Highlighting our top performers and their achievements.</h3>
+    </div>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#toppers" class="ui-btn-active">Our Toppers</a></li>
+        <li><a href="#registration">Registration</a></li>
+      </ul>
+    </div>
+    <div data-role="content" class="center">
+      <input type="text" id="search-input" placeholder="Search toppers..." style="margin-bottom: 10px;">
+      <div class="topper-info">
+        <img src="8.jpg" alt="Omkar Patil" class="responsive-img hover-effect new-hover-effect">
+        <h2>Omkar Patil</h2>
+        <p>Omkar Patil has consistently topped the university in computer science for three consecutive years. He has also excelled in various extracurricular activities, such as robotics and debate competitions.</p>
+      </div>
+      <div class="topper-info">
+        <img src="7.jpg" alt="Suyash Mali" class="responsive-img hover-effect new-hover-effect">
+        <h2>Suyash Mali</h2>
+        <p>Suyash Mali is known for her outstanding performance in programming. She has represented the institute at national coding competitions and has won several accolades.</p>
+      </div>
+      <div class="topper-info">
+        <img src="9.jpg" alt="Prajwal Wajire" class="responsive-img hover-effect new-hover-effect">
+        <h2>Prajwal Wajire</h2>
+        <p>Prajwal's research in artificial intelligence has garnered international recognition. He has published papers in top-tier journals and has been invited to speak at prestigious conferences.</p>
+      </div>
+    </div>
+    <div data-role="footer" class="center">
+      <h2>Quick Access</h2>
+      <div class="footer-link"><a href="#home">Home</a></div>
+      <div class="footer-link"><a href="#about">About</a></div>
+      <div the class="footer-link"><a href="#toppers">Topper</a></div>
+      <div class="footer-link"><a href="#registration">Registration</a></div>
+      <p>All Rights Reserved with PICT &copy; 2024-25</p>
+    </div>
+  </div>
+  
+
+
+  <!-- Registration Page -->
+  <div data-role="page" id="registration">
+    <div data-role="header">
+      <h2>Registration</h2>
+      <h4>Join our community of innovators and leaders.</h4>
+    </div>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#toppers">Our Toppers</a></li>
+        <li><a href="#registration" class="ui-btn-active">Registration</a></li>
+      </ul>
+    </div>
+    <div data-role="content" class="center">
+      <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+        <label for="mobile">Mobile:</label>
+        <input type="text" name="mobile" id="mobile">
+        <label for="department">Department:</label>
+        <input type="text" name="department" id="department">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div data-role="footer" class="center">
+      <h3>Quick Access</h3>
+      <div class="footer-link"><a href="#home">Home</a></div>
+      <div class="footer-link"><a href="#about">About</a></div>
+      <div class="footer-link"><a href="#toppers">Topper</a></div>
+      <div class="footer-link"><a href="#registration">Registration</a></div>
+      <h5>All the Rights are reserved with pict.org © 2024-25</h5>
+    </div>
+  </div>
+</body>
+</html>

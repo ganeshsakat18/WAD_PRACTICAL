@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .image-gallery img {
+            max-width: 300px;
+            margin: 0 10px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">CompanyLogo</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        <p>Have questions? Contact us through the information provided below.</p>
+
+        <!-- Dummy data table -->
+        <table>
+            <caption>Contact Requests</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Date Received</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>johndoe@example.com</td>
+                    <td>Interested in your services, please call back.</td>
+                    <td>2024-05-01</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>janesmith@example.com</td>
+                    <td>Would like to schedule an appointment.</td>
+                    <td>2024-05-02</td>
+                </tr>
+                <tr>
+                    <td>Sam Brown</td>
+                    <td>sambrown@example.com</td>
+                    <td>Looking for more information on pricing.</td>
+                    <td>2024-05-02</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Adding images -->
+    <div class="image-gallery">
+        <img src="https://via.placeholder.com/600x400.png?text=Company+Image+1" alt="Company Image 1">
+        <img src="https://via.placeholder.com/600x400.png?text=Company+Image+2" alt="Company Image 2">
+        <img src="https://via.placeholder.com/600x400.png?text=Company+Image+3" alt="Company Image 3">
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: example@example.com</p>
+            <p>Phone: 123-456-7890</p>
+            <p>Address: 123 Main Street, Anytown, CA 12345</p>
+        </div>
+        <div class="social-links">
+            <a href="https://facebook.com/" target="_blank">Facebook</a>
+            <a href="https://twitter.com/" target="_blank">Twitter</a>
+            <a href="https://instagram.com/" target="_blank">Instagram</a>
+        </div>
+        <small>Copyright © 2024 Company Name. All Rights Reserved.</small>
+    </footer>
+</body>
+</html>
